@@ -27,7 +27,7 @@ const aceptAnswers = ['D', 'B', 'B', 'E']
 const button = document.querySelector('button')
 const p = document.createElement('p')
 
-form.addEventListener('submit', event => {
+const handleAnswers = event => {
     event.preventDefault()
     let score = 0
     const answers = [
@@ -37,21 +37,20 @@ form.addEventListener('submit', event => {
         form.aswer4
     
     ]
-    answers.forEach((answer, index) => {
+
+    const calcScore =  (answer, index) => {
         if(answer.value === aceptAnswers[index]) {
             score += 25
         }
 
-    })
+    }
+    answers.forEach(calcScore)
 
     const result = button.insertAdjacentElement('beforebegin', p) 
     result.setAttribute('class', 'result')
     result.textContent = `Você fez ${score} pontos`
 
+    
+}
 
-    answers.forEach(answer => {
-        answer.forEach( ans => {
-            ans.checked = false
-        })
-    })
-})
+form.addEventListener('submit', handleAnswers)
