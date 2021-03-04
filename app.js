@@ -23,24 +23,35 @@ Ps: se você não conseguiu fazer tudo o que foi pedido acima, abra a issue mesm
 */
 
 const form = document.querySelector('form')
-const aceptAnswers = ['B', 'B', 'B', 'B']
+const aceptAnswers = ['D', 'B', 'B', 'E']
+const button = document.querySelector('button')
+const p = document.createElement('p')
 
 form.addEventListener('submit', event => {
     event.preventDefault()
     let score = 0
     const answers = [
-        form.questionAswer1.value,
-        form.questionAswer2.value,
-        form.questionAswer3.value,
-        form.questionAswer4.value
+        form.aswer1,
+        form.aswer2,
+        form.aswer3,
+        form.aswer4
     
     ]
     answers.forEach((answer, index) => {
-        if(answer === aceptAnswers[index]) {
+        if(answer.value === aceptAnswers[index]) {
             score += 25
         }
 
     })
 
-    console.log(score)
+    const result = button.insertAdjacentElement('beforebegin', p) 
+    result.setAttribute('class', 'result')
+    result.textContent = `Você fez ${score} pontos`
+
+
+    answers.forEach(answer => {
+        answer.forEach( ans => {
+            ans.checked = false
+        })
+    })
 })

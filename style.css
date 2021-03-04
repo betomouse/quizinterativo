@@ -4,6 +4,9 @@ body {
 .container {
     max-width:100%;
     height: auto;
+    width:100%;
+    padding: 0px 0px;
+    margin-bottom: 20px;
     
 }
 .absolute {
@@ -42,25 +45,35 @@ body {
     margin: 0px 0 0 0;
 }
 .form-check-input{
-    margin:10px 0 0 0px;
-}
-.form-check-input{
+    margin:13px 0 0 0px;
     background-color:rgb(110, 146, 246);
+    cursor:pointer;
 }
+
 .form-check-input:checked{
     background-color:rgb(255, 187, 0);
     border:2px solid rgba(255, 0, 0, 0.281)
 }
 
 .form-check-label{
-    margin:12px 0 0 0px;
+    margin:15px 0 0 0px;
     color:rgb(134, 175, 251);
+    cursor:pointer;
+
+}
+.form-check-label:hover{
+    color:burlywood;
 
 }
 .form-check-input:checked + .form-check-label{
     color:yellow;
 } 
 
-button {
+.btn-primary {
     margin:0 0 0 20px;
+}
+
+.result {
+    margin:20px;
+    color:yellow;
 }
