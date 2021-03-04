@@ -1,0 +1,66 @@
+body {
+    background-color:rgb(68, 62, 121);
+}
+.container {
+    max-width:100%;
+    height: auto;
+    
+}
+.absolute {
+    text-align: left;
+    margin: 0 auto;
+    width:100%;
+    font-family: Helvetica, Arial, sans-serif;
+    color: white;
+}
+
+.title{
+    background-color:rgb(174, 0, 255);
+    text-align: center;
+    padding: 20px;
+    width:100%;
+    margin:0 auto;
+    color:white;
+}
+
+.question {
+    margin:20px;
+    
+}
+.question p {
+    color:white;
+}
+
+.question-title {
+    margin: 0 0 0px 0;
+}
+
+.form-check{
+    font-size: 0.8em;
+    line-height: 0.5em;
+    padding:0px 0 0 30px;
+    margin: 0px 0 0 0;
+}
+.form-check-input{
+    margin:10px 0 0 0px;
+}
+.form-check-input{
+    background-color:rgb(110, 146, 246);
+}
+.form-check-input:checked{
+    background-color:rgb(255, 187, 0);
+    border:2px solid rgba(255, 0, 0, 0.281)
+}
+
+.form-check-label{
+    margin:12px 0 0 0px;
+    color:rgb(134, 175, 251);
+
+}
+.form-check-input:checked + .form-check-label{
+    color:yellow;
+} 
+
+button {
+    margin:0 0 0 20px;
+}
