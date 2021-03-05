@@ -77,3 +77,33 @@ body {
     margin:20px;
     color:yellow;
 }
+
+.popup-wrapper {
+    position:fixed;
+    top:0;
+    left:0;
+    background-color:rgba(0, 0, 0, 0.5);
+    height:100%;
+    width:100%;
+}
+
+.popup {
+    background-color:darkslateblue;
+    padding:20px;
+    max-width: 250px;
+    margin: 20px auto;
+    text-align:center;
+    position: relative;
+
+}
+
+.popup-close {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    padding: 6px 11px 8px 11px;
+    background-color: black;
+    border-radius: 20px;
+    cursor:pointer;
+
+}

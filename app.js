@@ -25,7 +25,7 @@ Ps: se você não conseguiu fazer tudo o que foi pedido acima, abra a issue mesm
 const form = document.querySelector('form')
 const aceptAnswers = ['D', 'B', 'B', 'E']
 const button = document.querySelector('button')
-const p = document.createElement('p')
+const popup = document.createElement('div')
 
 const handleAnswers = event => {
     event.preventDefault()
@@ -42,14 +42,38 @@ const handleAnswers = event => {
         if(answer.value === aceptAnswers[index]) {
             score += 25
         }
-
     }
     answers.forEach(calcScore)
 
-    const result = button.insertAdjacentElement('beforebegin', p) 
-    result.setAttribute('class', 'result')
-    result.textContent = `Você fez ${score} pontos`
+    const result = button.insertAdjacentElement('beforebegin', popup) 
+    result.setAttribute('class', 'popup-wrapper')
+    result.style.display = 'block'
+    result.innerHTML = `
+    <div class="popup">
+     <div class="popup-close">x</div>
+     <p class="result">Você fez ${score} pontos.</p>
+    </div>
+    `
+    const closePopupClass = ['popup-close', 'popup-wrapper']
+    const closePopup = event => {
+        event.stopPropagation()
+        const isClosePopupClass = closePopupClass.includes(event.target.className)
 
+        if(isClosePopupClass) {
+            result.style.display ='none'
+
+            const initAnswers = answer => {
+                const cleanInputs = input => {
+                    input.checked = ''
+                }
+                answer.forEach(cleanInputs)
+            }
+            answers.forEach(initAnswers)
+        }
+        
+    }
+
+    popup.addEventListener('click', closePopup ) 
     
 }
 
